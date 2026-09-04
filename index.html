@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
+    /* ---------- COLOURS ---------- */
+
     :root {
       --cream: #faf7f0;
       --green: #2e6f5e;
@@ -25,6 +33,9 @@
       --ink: #171717;
       --muted: #6d6a64;
     }
+
+
+    /* ---------- BASE ---------- */
 
     * {
       box-sizing: border-box;
@@ -52,58 +63,74 @@
       padding: 0 32px;
     }
 
+
+    /* ---------- HEADER ---------- */
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 28px 0;
-      border-bottom: 1px solid rgba(0,0,0,.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .name {
       font-weight: 600;
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     nav {
       display: flex;
       gap: 28px;
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
 
     nav a:hover {
       color: var(--green);
     }
 
+
+    /* ---------- TYPOGRAPHY ---------- */
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(5rem, 7vw, 7.5rem);
+      line-height: 0.88;
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+
+    /* ---------- HERO ---------- */
+
     .hero {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 64px;
       align-items: center;
       padding: 90px 0 110px;
     }
 
     .eyebrow {
-      color: var(--green);
-      font-size: .82rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
       margin-bottom: 24px;
-    }
-
-    h1, h2 {
-      font-family: "DM Serif Display", serif;
-      font-weight: 400;
-      margin: 0;
-    }
-
-   h1 {
-  font-size: clamp(5rem, 7vw, 7.5rem);
-      line-height: .88;
-      letter-spacing: -.035em;
-      max-width: 760px;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     h1 .dot {
@@ -112,61 +139,68 @@
 
     .intro {
       max-width: 620px;
+      margin: 34px 0;
       font-size: 1.15rem;
       line-height: 1.65;
-      margin: 34px 0;
     }
 
     .button {
       display: inline-block;
+      padding: 15px 22px;
       background: var(--green);
       color: white;
-      padding: 15px 22px;
-      font-size: .85rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: .06em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     .hero-art {
-      min-height: 520px;
-      background:
-        linear-gradient(135deg, transparent 0 28%, #ffd7bb 28% 48%, transparent 48%),
-        linear-gradient(90deg, var(--green) 0 67%, var(--plum) 67%);
       position: relative;
+      min-height: 520px;
       overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          transparent 0 28%,
+          #ffd7bb 28% 48%,
+          transparent 48%
+        ),
+        linear-gradient(
+          90deg,
+          var(--green) 0 67%,
+          var(--plum) 67%
+        );
     }
 
     .hero-art::after {
       content: "CURIOSITY\A CONNECTION\A IMPACT";
-      white-space: pre;
       position: absolute;
       right: 28px;
       bottom: 30px;
       color: white;
-      font-size: .8rem;
+      font-size: 0.8rem;
       line-height: 1.7;
-      letter-spacing: .12em;
+      letter-spacing: 0.12em;
+      white-space: pre;
     }
+
+
+    /* ---------- WORK OVERVIEW ---------- */
 
     .section {
       padding: 100px 0;
-      border-top: 1px solid rgba(0,0,0,.08);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .section-number {
-      color: var(--green);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
       margin-bottom: 18px;
-    }
-
-    h2 {
-      font-size: clamp(3rem, 5vw, 5rem);
-      line-height: 1;
-      letter-spacing: -.035em;
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     .section-intro {
@@ -176,126 +210,104 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
-    
-<!-- WORK OVERVIEW -->
-<section class="section" id="work">
 
-  <div class="section-number">01 · Science Writing & Editorial</div>
-
-  <h2>Where science meets storytelling.</h2>
-
-  <p class="section-intro">
-    I transform technical detail into compelling stories through sharp writing
-    and editing — from in-depth science features to profiles that put the people
-    behind the research centre stage.
-  </p>
-
-  <a class="text-link" href="writing.html">Explore writing →</a>
-
-</section>
-
-
-<section class="section">
-
-  <div class="section-number">02 · Research Communications</div>
-
-  <h2>Research, translated for impact.</h2>
-
-  <p class="section-intro">
-    I tailor research communications to the people they need to reach,
-    demonstrating the impact of research across digital and live experiences.
-  </p>
-
-  <a class="text-link" href="research-communications.html">
-    Explore research communications →
-  </a>
-
-</section>
-
-
-<section class="section">
-
-  <div class="section-number">03 · Community Building</div>
-
-  <h2>Creating community through science.</h2>
-
-  <p class="section-intro">
-    I create spaces where science brings people together and shared curiosity
-    grows into connection, participation and a sense of belonging.
-  </p>
-
-  <a class="text-link" href="community.html">
-    Explore community building →
-  </a>
-
-</section>
-
-
-<section class="section" id="speaking">
-
-  <div class="section-number">04 · Speaking & Moderating</div>
-
-  <h2>Complex conversations, made clear.</h2>
-
-  <p class="section-intro">
-    I turn specialist topics into engaging, accessible conversations that
-    draw people in.
-  </p>
-
-  <a class="text-link" href="speaking.html">
-    Explore speaking & moderating →
-  </a>
-
-</section>
-    /* ABOUT */
-
-    .statement {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 340px;
-      margin: 100px 0;
+    .text-link {
+      font-weight: 600;
     }
 
-    .statement-left {
-      background: var(--mustard);
-      padding: 54px;
-      display: flex;
-      align-items: center;
+    .text-link:hover {
+      color: var(--green);
     }
 
-    .statement-left h2 {
-      font-size: clamp(3rem, 5vw, 5.5rem);
-    }
 
-    .statement-right {
+    /* ---------- CONTACT ---------- */
+
+    .contact-section {
+      margin-top: 40px;
+      padding: 8rem 7vw;
       background: var(--plum);
-      color: white;
-      padding: 54px;
-      display: flex;
-      align-items: center;
+      color: var(--cream);
     }
 
-    .statement-right p {
-      max-width: 480px;
-      font-size: 1.1rem;
-      line-height: 1.7;
+    .contact-inner {
+      max-width: 850px;
     }
+
+    .contact-label {
+      margin: 0 0 2rem;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .contact-section h2 {
+      max-width: 700px;
+      margin: 0 0 2rem;
+      color: var(--cream);
+      font-size: clamp(4rem, 8vw, 7.5rem);
+      line-height: 0.9;
+    }
+
+    .contact-section .contact-you {
+      color: var(--mustard);
+      font-style: italic;
+    }
+
+    .contact-copy {
+      max-width: 650px;
+      margin: 0 0 2.5rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-button.primary {
+      background: var(--cream);
+      color: var(--plum);
+    }
+
+    .contact-button.secondary {
+      border: 1px solid var(--cream);
+      color: var(--cream);
+    }
+
+
+    /* ---------- FOOTER ---------- */
 
     footer {
-      border-top: 1px solid rgba(0,0,0,.08);
-      padding: 30px 0 50px;
       display: flex;
       justify-content: space-between;
-      font-size: .9rem;
+      padding: 30px 0 50px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 0.9rem;
     }
 
+
+    /* ---------- RESPONSIVE ---------- */
+
     @media (max-width: 800px) {
-      .hero,
-      .statement {
-        grid-template-columns: 1fr;
-      }
 
       .hero {
+        grid-template-columns: 1fr;
         padding-top: 60px;
       }
 
@@ -303,34 +315,24 @@
         min-height: 360px;
       }
 
-      .writing-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .ssi-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .impact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .impact:nth-child(2) {
-        border-right: none;
-      }
-
-      .event {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
       nav {
         display: none;
       }
     }
 
+    @media (max-width: 700px) {
+
+      .contact-section {
+        padding: 5rem 6vw;
+      }
+
+      .contact-section h2 {
+        font-size: clamp(3.5rem, 16vw, 5rem);
+      }
+    }
+
     @media (max-width: 520px) {
+
       .page {
         padding: 0 20px;
       }
@@ -339,121 +341,44 @@
         font-size: 4.3rem;
       }
 
-      .ssi,
-      .speaking {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .impact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .impact {
-        border-right: none;
+      footer {
+        flex-direction: column;
+        gap: 8px;
       }
     }
-    /* CONTACT */
 
-.contact-section {
-  background: var(--plum);
-  color: var(--cream);
-  padding: 8rem 7vw;
-}
-
-.contact-inner {
-  max-width: 850px;
-}
-
-.contact-label {
-  margin: 0 0 2rem;
-  font-family: "DM Sans", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}
-
-.contact-section h2 {
-  margin: 0 0 2rem;
-  max-width: 700px;
-  font-size: clamp(4rem, 8vw, 7.5rem);
-  line-height: 0.9;
-  color: var(--cream);
-}
-
-.contact-copy {
-  max-width: 650px;
-  margin: 0 0 2.5rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.contact-button {
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.contact-button:hover {
-  transform: translateY(-2px);
-}
-
-.contact-button.primary {
-  background: var(--cream);
-  color: var(--plum);
-}
-
-.contact-button.secondary {
-  border: 1px solid var(--cream);
-  color: var(--cream);
-}
-
-.contact-section .contact-you {
-  color: var(--mustard);
-  font-style: italic;
-}
-
-@media (max-width: 700px) {
-  .contact-section {
-    padding: 5rem 6vw;
-  }
-
-  .contact-section h2 {
-    font-size: clamp(3.5rem, 16vw, 5rem);
-  }
-}
-}
   </style>
 </head>
 
+
 <body>
+
   <div class="page">
 
+    <!-- HEADER -->
     <header>
-      <div class="name">Kami Navarro</div>
+
+      <div class="name">
+        Kami Navarro
+      </div>
 
       <nav>
         <a href="#work">Work</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="#speaking">Speaking</a>
         <a href="#contact">Contact</a>
       </nav>
+
     </header>
+
 
     <main>
 
       <!-- HERO -->
       <section class="hero">
+
         <div>
+
           <div class="eyebrow">
             Science Editor · Communications Specialist · Community Builder
           </div>
@@ -469,123 +394,188 @@
             connect research with people.
           </p>
 
-          <a class="button" href="#work">Explore my work →</a>
+          <a class="button" href="#work">
+            Explore my work →
+          </a>
+
         </div>
 
         <div class="hero-art"></div>
+
       </section>
 
 
-      <!-- WRITING -->
-<!-- WORK OVERVIEW -->
-<section class="section" id="work">
+      <!-- 01 · SCIENCE WRITING & EDITORIAL -->
+      <section class="section" id="work">
 
-  <div class="section-number">01 · Science Writing & Editorial</div>
+        <div class="section-number">
+          01 · Science Writing & Editorial
+        </div>
 
-  <h2>Where science meets storytelling.</h2>
+        <h2>
+          Where science meets storytelling.
+        </h2>
 
-  <p class="section-intro">
-    I transform technical detail into compelling stories through sharp writing
-    and editing — from in-depth science features to profiles that put the people
-    behind the research centre stage.
-  </p>
+        <p class="section-intro">
+          I transform technical detail into compelling stories through sharp
+          writing and editing — from in-depth science features to profiles that
+          put the people behind the research centre stage.
+        </p>
 
-  <a class="text-link" href="writing.html">Explore writing →</a>
+        <a class="text-link" href="writing.html">
+          Explore writing →
+        </a>
 
-</section>
-
-
-<section class="section">
-
-  <div class="section-number">02 · Research Communications</div>
-
-  <h2>Research, translated for impact.</h2>
-
-  <p class="section-intro">
-    I tailor research communications to the people they need to reach,
-    demonstrating the impact of research across digital and live experiences.
-  </p>
-
-  <a class="text-link" href="research-communications.html">
-    Explore research communications →
-  </a>
-
-</section>
+      </section>
 
 
-<section class="section">
+      <!-- 02 · RESEARCH COMMUNICATIONS -->
+      <section class="section">
 
-  <div class="section-number">03 · Community Building</div>
+        <div class="section-number">
+          02 · Research Communications
+        </div>
 
-  <h2>Creating community through science.</h2>
+        <h2>
+          Research, translated for impact.
+        </h2>
 
-  <p class="section-intro">
-    I create spaces where science brings people together and shared curiosity
-    grows into connection, participation and a sense of belonging.
-  </p>
+        <p class="section-intro">
+          I tailor research communications to the people they need to reach,
+          demonstrating the impact of research across digital and live
+          experiences.
+        </p>
 
-  <a class="text-link" href="community.html">
-    Explore community building →
-  </a>
+        <a
+          class="text-link"
+          href="research-communications.html"
+        >
+          Explore research communications →
+        </a>
 
-</section>
+      </section>
 
 
-<section class="section" id="speaking">
+      <!-- 03 · COMMUNITY BUILDING -->
+      <section class="section">
 
-  <div class="section-number">04 · Speaking & Moderating</div>
+        <div class="section-number">
+          03 · Community Building
+        </div>
 
-  <h2>Complex conversations, made clear.</h2>
+        <h2>
+          Creating community through science.
+        </h2>
 
-  <p class="section-intro">
-    I turn specialist topics into engaging, accessible conversations that
-    draw people in.
-  </p>
+        <p class="section-intro">
+          I create spaces where science brings people together and shared
+          curiosity grows into connection, participation and a sense of
+          belonging.
+        </p>
 
-  <a class="text-link" href="speaking.html">
-    Explore speaking & moderating →
-  </a>
+        <a
+          class="text-link"
+          href="community.html"
+        >
+          Explore community building →
+        </a>
 
-</section>
+      </section>
+
+
+      <!-- 04 · SPEAKING & MODERATING -->
+      <section
+        class="section"
+        id="speaking"
+      >
+
+        <div class="section-number">
+          04 · Speaking & Moderating
+        </div>
+
+        <h2>
+          Complex conversations, made clear.
+        </h2>
+
+        <p class="section-intro">
+          I turn specialist topics into engaging, accessible conversations that
+          draw people in.
+        </p>
+
+        <a
+          class="text-link"
+          href="speaking.html"
+        >
+          Explore speaking & moderating →
+        </a>
+
+      </section>
+
     </main>
 
+
     <!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-inner">
+    <section
+      class="contact-section"
+      id="contact"
+    >
 
-    <p class="contact-label">GET IN TOUCH</p>
+      <div class="contact-inner">
 
-<h2>
-  What are <span class="contact-you">you</span><br>
-  working on?
-</h2>
-    
-    <p class="contact-copy">
-      Whether it’s research that needs translating, a story meant to be shared
-      or a conversation worth having, I’d love to hear from you.
-    </p>
+        <p class="contact-label">
+          GET IN TOUCH
+        </p>
 
-    <div class="contact-links">
-      <a class="contact-button primary" href="mailto:YOUR-EMAIL-HERE">
-        Email me →
-      </a>
+        <h2>
+          What are <span class="contact-you">you</span><br>
+          working on?
+        </h2>
 
-      <a class="contact-button secondary"
-         href="YOUR-LINKEDIN-URL"
-         target="_blank"
-         rel="noopener noreferrer">
-        LinkedIn →
-      </a>
-    </div>
+        <p class="contact-copy">
+          Whether it’s research that needs translating, a story meant to be
+          shared or a conversation worth having, I’d love to hear from you.
+        </p>
 
-  </div>
-</section>
+        <div class="contact-links">
 
-    <footer id="contact">
-      <strong>Kami Navarro</strong>
-      <span>Science · People · Communication</span>
+          <a
+            class="contact-button primary"
+            href="mailto:kamilaianavarro@gmail.com"
+          >
+            Email me →
+          </a>
+
+          <a
+            class="contact-button secondary"
+            href="https://www.linkedin.com/in/kami-navarro/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <strong>
+        Kami Navarro
+      </strong>
+
+      <span>
+        Science · People · Communication
+      </span>
+
     </footer>
 
   </div>
+
 </body>
+
 </html>
