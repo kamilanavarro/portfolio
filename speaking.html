@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Speaking & Moderating | Kami Navarro</title>
+
+  <meta
+    name="description"
+    content="Speaking and moderating by Kami Navarro across science communication, research, innovation and public engagement."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #faf7f0;
+      --green: #2e6f5e;
+      --coral: #ff7f5f;
+      --mustard: #f4b942;
+      --plum: #3a2a4d;
+      --ink: #171717;
+      --muted: #6d6a64;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .name {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+    }
+
+
+    /* PAGE INTRO */
+
+    .page-intro {
+      padding: 100px 0 110px;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+      color: var(--plum);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 950px;
+      font-size: clamp(4.5rem, 8vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 36px 0 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+
+    /* EVENTS */
+
+    .events {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 110px 170px 1fr auto;
+      gap: 32px;
+      align-items: start;
+      padding: 55px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .event-year {
+      color: var(--coral);
+      font-family: "DM Serif Display", serif;
+      font-size: 2.8rem;
+      line-height: 1;
+    }
+
+    .event-role {
+      padding-top: 7px;
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .event h2 {
+      max-width: 650px;
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+    }
+
+    .event-org {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .event-link {
+      padding-top: 7px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .event-link:hover {
+      color: var(--plum);
+    }
+
+
+    /* STATEMENT */
+
+    .statement {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      padding: 100px 0;
+    }
+
+    .statement-label {
+      color: var(--coral);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .statement h2 {
+      max-width: 700px;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .statement p {
+      max-width: 650px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 7rem 7vw;
+      background: var(--plum);
+      color: var(--cream);
+    }
+
+    .contact-label {
+      margin: 0 0 2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .contact-section h2 {
+      max-width: 700px;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.9;
+    }
+
+    .contact-you {
+      color: var(--mustard);
+      font-style: italic;
+    }
+
+    .contact-copy {
+      max-width: 650px;
+      margin: 2rem 0 2.5rem;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .contact-button.primary {
+      background: var(--cream);
+      color: var(--plum);
+    }
+
+    .contact-button.secondary {
+      border: 1px solid var(--cream);
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0 50px;
+      font-size: 0.9rem;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .event {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .statement {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .page {
+        padding: 0 20px;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+
+      <a class="name" href="index.html">
+        Kami Navarro
+      </a>
+
+      <nav>
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+    </header>
+
+
+    <main>
+
+      <!-- INTRO -->
+      <section class="page-intro">
+
+        <div class="eyebrow">
+          04 · Speaking & Moderating
+        </div>
+
+        <h1>
+          Complex conversations, made clear.
+        </h1>
+
+        <p class="intro">
+          I turn specialist topics into engaging, accessible conversations
+          that draw people in.
+        </p>
+
+      </section>
+
+
+      <!-- EVENTS -->
+      <section class="events">
+
+
+        <!-- BERLIN SCIENCE DEBATE -->
+        <article class="event">
+
+          <div class="event-year">
+            —
+          </div>
+
+          <div class="event-role">
+            Speaker
+          </div>
+
+          <div>
+            <h2>
+              Berlin Science Debate
+            </h2>
+          </div>
+
+        </article>
+
+
+        <!-- DIA:GRAM MEDIA FORUM -->
+        <article class="event">
+
+          <div class="event-year">
+            2021
+          </div>
+
+          <div class="event-role">
+            Moderator
+          </div>
+
+          <div>
+
+            <h2>
+              Dia:gram Media Forum
+            </h2>
+
+            <p class="event-org">
+              Roche
+            </p>
+
+          </div>
+
+          <a
+            class="event-link"
+            href="https://www.youtube.com/watch?v=Ea-HGFsKjms"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch →
+          </a>
+
+        </article>
+
+
+        <!-- CITIES OF THE FUTURE -->
+        <article class="event">
+
+          <div class="event-year">
+            2021
+          </div>
+
+          <div class="event-role">
+            Moderator
+          </div>
+
+          <div>
+
+            <h2>
+              Cities of the Future Conference
+            </h2>
+
+            <p class="event-org">
+              Unbound Live
+            </p>
+
+          </div>
+
+          <a
+            class="event-link"
+            href="https://www.unbound.live/cities-of-the-future"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View event →
+          </a>
+
+        </article>
+
+
+        <!-- SWITCH -->
+        <article class="event">
+
+          <div class="event-year">
+            2020
+          </div>
+
+          <div class="event-role">
+            Moderator
+          </div>
+
+          <div>
+
+            <h2>
+              Singapore Week of Innovation & Technology
+            </h2>
+
+            <p class="event-org">
+              Enterprise Singapore · SWITCH
+            </p>
+
+          </div>
+
+          <a
+            class="event-link"
+            href="https://notes.switchsg.org/notes/116"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View event →
+          </a>
+
+        </article>
+
+
+        <!-- SHE TALKS ASIA -->
+        <article class="event">
+
+          <div class="event-year">
+            —
+          </div>
+
+          <div class="event-role">
+            Speaker · Facilitator
+          </div>
+
+          <div>
+
+            <h2>
+              The Toolkit for Every Multi-Hyphenate
+            </h2>
+
+            <p class="event-org">
+              Tribe-Meet Up · She Talks Asia
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </section>
+
+
+      <!-- APPROACH -->
+      <section class="statement">
+
+        <div class="statement-label">
+          On stage
+        </div>
+
+        <div>
+
+          <h2>
+            Making expertise accessible.
+          </h2>
+
+          <p>
+            Whether I’m speaking to an audience or moderating a panel, I focus
+            on creating conversations that are clear, curious and genuinely
+            engaging — without losing the complexity that makes the subject
+            interesting.
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section">
+
+      <p class="contact-label">
+        GET IN TOUCH
+      </p>
+
+      <h2>
+        What are <span class="contact-you">you</span><br>
+        working on?
+      </h2>
+
+      <p class="contact-copy">
+        Whether it’s research that needs translating, a story meant to be
+        shared or a conversation worth having, I’d love to hear from you.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          class="contact-button primary"
+          href="mailto:kamilaianavarro@gmail.com"
+        >
+          Email me →
+        </a>
+
+        <a
+          class="contact-button secondary"
+          href="https://www.linkedin.com/in/kami-navarro/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <strong>Kami Navarro</strong>
+      <span>Science · People · Communication</span>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
