@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research Communications | Kami Navarro</title>
+
+  <meta
+    name="description"
+    content="Research communications work by Kami Navarro across digital content, institutional storytelling, social media, events and public engagement."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #faf7f0;
+      --green: #2e6f5e;
+      --coral: #ff7f5f;
+      --mustard: #f4b942;
+      --plum: #3a2a4d;
+      --ink: #171717;
+      --muted: #6d6a64;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .name {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+    }
+
+
+    /* PAGE INTRO */
+
+    .page-intro {
+      padding: 100px 0 110px;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 950px;
+      font-size: clamp(4.5rem, 8vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 36px 0 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+
+    /* CASE STUDY INTRO */
+
+    .case-study {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      padding: 90px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .case-label {
+      margin-bottom: 18px;
+      color: var(--coral);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .case-study h2 {
+      max-width: 500px;
+      font-size: clamp(3.3rem, 5vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+    }
+
+    .case-copy p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .case-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .case-link:hover {
+      color: var(--green);
+    }
+
+
+    /* WORK AREAS */
+
+    .work-areas {
+      padding: 90px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .work-heading {
+      max-width: 700px;
+      margin-bottom: 60px;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .work-item {
+      min-height: 330px;
+      padding: 42px;
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .work-number {
+      margin-bottom: 45px;
+      color: var(--coral);
+      font-family: "DM Serif Display", serif;
+      font-size: 2.6rem;
+      line-height: 1;
+    }
+
+    .work-item h3 {
+      font-size: 2.2rem;
+      line-height: 1.05;
+    }
+
+    .work-item p {
+      max-width: 470px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .work-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-weight: 600;
+    }
+
+    .work-link:hover {
+      color: var(--green);
+    }
+
+
+    /* PHILOSOPHY */
+
+    .philosophy {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 80px;
+      padding: 100px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .philosophy-label {
+      color: var(--mustard);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .philosophy h2 {
+      max-width: 750px;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .philosophy p {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 7rem 7vw;
+      background: var(--plum);
+      color: var(--cream);
+    }
+
+    .contact-label {
+      margin: 0 0 2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .contact-section h2 {
+      max-width: 700px;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.9;
+    }
+
+    .contact-you {
+      color: var(--mustard);
+      font-style: italic;
+    }
+
+    .contact-copy {
+      max-width: 650px;
+      margin: 2rem 0 2.5rem;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .contact-button.primary {
+      background: var(--cream);
+      color: var(--plum);
+    }
+
+    .contact-button.secondary {
+      border: 1px solid var(--cream);
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0 50px;
+      font-size: 0.9rem;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .case-study,
+      .philosophy {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .page {
+        padding: 0 20px;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .work-item {
+        min-height: auto;
+        padding: 32px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+
+      <a class="name" href="index.html">
+        Kami Navarro
+      </a>
+
+      <nav>
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+    </header>
+
+
+    <main>
+
+      <!-- INTRO -->
+      <section class="page-intro">
+
+        <div class="eyebrow">
+          02 · Research Communications
+        </div>
+
+        <h1>
+          Research, translated for impact.
+        </h1>
+
+        <p class="intro">
+          I tailor research communications to the people they need to reach,
+          demonstrating the impact of research across digital and live
+          experiences.
+        </p>
+
+      </section>
+
+
+      <!-- SSI CASE STUDY -->
+      <section class="case-study">
+
+        <div>
+
+          <div class="case-label">
+            Case study
+          </div>
+
+          <h2>
+            Save Sight Institute
+          </h2>
+
+        </div>
+
+        <div class="case-copy">
+
+          <p>
+            At the Save Sight Institute, I work across research communications
+            to connect eye research with the people it matters to — from
+            researchers and patients to supporters and the wider public.
+          </p>
+
+          <p>
+            My work spans digital communications, science storytelling and
+            events, translating research and institutional priorities into
+            content and experiences that are clear, engaging and meaningful
+            for different audiences.
+          </p>
+
+          <a
+            class="case-link"
+            href="https://www.sydney.edu.au/save-sight-institute/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit the Save Sight Institute →
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- AREAS OF WORK -->
+      <section class="work-areas">
+
+        <h2 class="work-heading">
+          From research to real-world connection.
+        </h2>
+
+        <div class="work-grid">
+
+
+          <!-- 01 -->
+          <article class="work-item">
+
+            <div class="work-number">
+              01
+            </div>
+
+            <h3>
+              Website & digital communications
+            </h3>
+
+            <p>
+              Developing and managing content across the Institute's website,
+              translating research, people and priorities for researchers,
+              patients, supporters and the public.
+            </p>
+
+          </article>
+
+
+          <!-- 02 -->
+          <article class="work-item">
+
+            <div class="work-number">
+              02
+            </div>
+
+            <h3>
+              Social storytelling
+            </h3>
+
+            <p>
+              Finding the human stories within research and bringing them to
+              digital audiences through accessible, people-centred content.
+            </p>
+
+            <a
+              class="work-link"
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7171642402758123520"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See an example →
+            </a>
+
+          </article>
+
+
+          <!-- 03 -->
+          <article class="work-item">
+
+            <div class="work-number">
+              03
+            </div>
+
+            <h3>
+              Events & engagement
+            </h3>
+
+            <p>
+              Shaping communications and experiences that bring researchers,
+              partners and communities together around eye health and
+              research.
+            </p>
+
+            <a
+              class="work-link"
+              href="https://www.linkedin.com/posts/save-sight-institute_savesightinstitute-research-science-activity-7224213724377595905-BvnE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See an example →
+            </a>
+
+          </article>
+
+
+          <!-- 04 -->
+          <article class="work-item">
+
+            <div class="work-number">
+              04
+            </div>
+
+            <h3>
+              Institutional storytelling
+            </h3>
+
+            <p>
+              Bringing an organisation's history, people and impact together
+              into narratives that show where it has been and where it is
+              going.
+            </p>
+
+            <p>
+              This included developing the program for the Institute's
+              150 Years of Collective Impact celebration, telling the story of
+              its contribution to eye health and research.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- APPROACH -->
+      <section class="philosophy">
+
+        <div class="philosophy-label">
+          My approach
+        </div>
+
+        <div>
+
+          <h2>
+            The audience changes. The research doesn't have to get lost.
+          </h2>
+
+          <p>
+            Good research communication isn't simply about making information
+            shorter or simpler. I think about who needs to understand the work,
+            what matters to them and how the story can meet them there while
+            staying true to the research.
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section">
+
+      <p class="contact-label">
+        GET IN TOUCH
+      </p>
+
+      <h2>
+        What are <span class="contact-you">you</span><br>
+        working on?
+      </h2>
+
+      <p class="contact-copy">
+        Whether it’s research that needs translating, a story meant to be
+        shared or a conversation worth having, I’d love to hear from you.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          class="contact-button primary"
+          href="mailto:kamilaianavarro@gmail.com"
+        >
+          Email me →
+        </a>
+
+        <a
+          class="contact-button secondary"
+          href="https://www.linkedin.com/in/kami-navarro/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <strong>Kami Navarro</strong>
+      <span>Science · People · Communication</span>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
