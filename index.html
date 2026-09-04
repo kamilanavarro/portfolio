@@ -353,6 +353,79 @@
         border-right: none;
       }
     }
+    /* CONTACT */
+
+.contact-section {
+  background: var(--plum);
+  color: var(--cream);
+  padding: 8rem 7vw;
+}
+
+.contact-inner {
+  max-width: 850px;
+}
+
+.contact-label {
+  margin: 0 0 2rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.contact-section h2 {
+  margin: 0 0 2rem;
+  max-width: 700px;
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  line-height: 0.9;
+  color: var(--cream);
+}
+
+.contact-copy {
+  max-width: 650px;
+  margin: 0 0 2.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+}
+
+.contact-button.primary {
+  background: var(--cream);
+  color: var(--plum);
+}
+
+.contact-button.secondary {
+  border: 1px solid var(--cream);
+  color: var(--cream);
+}
+
+@media (max-width: 700px) {
+  .contact-section {
+    padding: 5rem 6vw;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+  }
+}
   </style>
 </head>
 
@@ -489,6 +562,34 @@
 
     </main>
 
+    <!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+
+    <p class="contact-label">GET IN TOUCH</p>
+
+    <h2>Have science<br>to share?</h2>
+
+    <p class="contact-copy">
+      Whether it’s research that needs translating, a story meant to be shared
+      or a conversation worth having, I’d love to hear from you.
+    </p>
+
+    <div class="contact-links">
+      <a class="contact-button primary" href="mailto:YOUR-EMAIL-HERE">
+        Email me →
+      </a>
+
+      <a class="contact-button secondary"
+         href="YOUR-LINKEDIN-URL"
+         target="_blank"
+         rel="noopener noreferrer">
+        LinkedIn →
+      </a>
+    </div>
+
+  </div>
+</section>
 
     <footer id="contact">
       <strong>Kami Navarro</strong>
