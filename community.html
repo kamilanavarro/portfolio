@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Community Building | Kami Navarro</title>
+
+  <meta
+    name="description"
+    content="Community building work by Kami Navarro, including science communication, digital communities and Pinoy Scientists."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #faf7f0;
+      --green: #2e6f5e;
+      --coral: #ff7f5f;
+      --mustard: #f4b942;
+      --plum: #3a2a4d;
+      --ink: #171717;
+      --muted: #6d6a64;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .name {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+    }
+
+
+    /* PAGE INTRO */
+
+    .page-intro {
+      padding: 100px 0 110px;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+      color: var(--mustard);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 950px;
+      font-size: clamp(4.5rem, 8vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 36px 0 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+
+    /* FEATURE */
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 90px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-label {
+      margin-bottom: 18px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .feature h2 {
+      max-width: 620px;
+      font-size: clamp(3.4rem, 5vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+    }
+
+    .feature-copy p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .feature-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .feature-link:hover {
+      color: var(--green);
+    }
+
+
+    /* IMPACT */
+
+    .impact {
+      padding: 90px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .impact-label {
+      margin-bottom: 36px;
+      color: var(--coral);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .stat {
+      padding-top: 24px;
+      border-top: 3px solid var(--ink);
+    }
+
+    .stat-number {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(3.5rem, 5vw, 5.5rem);
+      line-height: 1;
+    }
+
+    .stat-label {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+
+    /* ROLE */
+
+    .role {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      padding: 90px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .role h2 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .role-copy p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+      margin-top: 80px;
+      padding: 7rem 7vw;
+      background: var(--plum);
+      color: var(--cream);
+    }
+
+    .contact-label {
+      margin: 0 0 2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .contact-section h2 {
+      max-width: 700px;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.9;
+    }
+
+    .contact-you {
+      color: var(--mustard);
+      font-style: italic;
+    }
+
+    .contact-copy {
+      max-width: 650px;
+      margin: 2rem 0 2.5rem;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .contact-button.primary {
+      background: var(--cream);
+      color: var(--plum);
+    }
+
+    .contact-button.secondary {
+      border: 1px solid var(--cream);
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0 50px;
+      font-size: 0.9rem;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .feature,
+      .role {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .page {
+        padding: 0 20px;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+
+      <a class="name" href="index.html">
+        Kami Navarro
+      </a>
+
+      <nav>
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+    </header>
+
+
+    <main>
+
+      <!-- INTRO -->
+      <section class="page-intro">
+
+        <div class="eyebrow">
+          03 · Community Building
+        </div>
+
+        <h1>
+          Creating community through science.
+        </h1>
+
+        <p class="intro">
+          I create spaces where science brings people together and shared
+          curiosity grows into connection, participation and a sense of
+          belonging.
+        </p>
+
+      </section>
+
+
+      <!-- PINOY SCIENTISTS -->
+      <section class="feature">
+
+        <div>
+
+          <div class="feature-label">
+            Featured community
+          </div>
+
+          <h2>
+            Pinoy Scientists
+          </h2>
+
+        </div>
+
+        <div class="feature-copy">
+
+          <p>
+            Pinoy Scientists is a digital platform that showcases the lives,
+            work and experiences of Filipino scientists through social media
+            takeovers and community-led science communication.
+          </p>
+
+          <p>
+            As Managing Director for Communications, I help shape how the
+            platform tells stories, engages its audience and creates space for
+            Filipino scientists to connect with one another and with the wider
+            public.
+          </p>
+
+          <a
+            class="feature-link"
+            href="https://pinoyscientists.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Pinoy Scientists →
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- IMPACT -->
+      <section class="impact">
+
+        <div class="impact-label">
+          Community at a glance
+        </div>
+
+        <div class="impact-grid">
+
+          <div class="stat">
+            <div class="stat-number">291</div>
+            <div class="stat-label">
+              scientists featured
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">84K</div>
+            <div class="stat-label">
+              Facebook followers
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">12.8K</div>
+            <div class="stat-label">
+              Instagram followers
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">7</div>
+            <div class="stat-label">
+              years of community building
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ROLE -->
+      <section class="role">
+
+        <div>
+
+          <div class="feature-label">
+            My role
+          </div>
+
+          <h2>
+            Building connection, not just reach.
+          </h2>
+
+        </div>
+
+        <div class="role-copy">
+
+          <p>
+            My work focuses on the communications that keep a community active:
+            shaping stories, creating accessible digital content and finding
+            ways for scientists and audiences to participate rather than simply
+            observe.
+          </p>
+
+          <p>
+            At its core, Pinoy Scientists is about visibility and connection —
+            giving Filipino scientists a platform to share who they are, what
+            they do and the many different paths a life in science can take.
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section">
+
+      <p class="contact-label">
+        GET IN TOUCH
+      </p>
+
+      <h2>
+        What are <span class="contact-you">you</span><br>
+        working on?
+      </h2>
+
+      <p class="contact-copy">
+        Whether it’s research that needs translating, a story meant to be
+        shared or a conversation worth having, I’d love to hear from you.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          class="contact-button primary"
+          href="mailto:kamilaianavarro@gmail.com"
+        >
+          Email me →
+        </a>
+
+        <a
+          class="contact-button secondary"
+          href="https://www.linkedin.com/in/kami-navarro/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <strong>Kami Navarro</strong>
+      <span>Science · People · Communication</span>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
