@@ -188,6 +188,66 @@
       color: var(--coral);
     }
 
+    /* ---------- EXPLORE MORE WORK ---------- */
+
+.explore-more {
+  padding: 90px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.explore-label {
+  margin-bottom: 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.explore-link {
+  display: grid;
+  grid-template-columns: 95px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  transition: padding-left 0.2s ease;
+}
+
+.explore-link:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.explore-link:hover {
+  padding-left: 10px;
+}
+
+.explore-number {
+  font-family: "DM Serif Display", serif;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.explore-title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1;
+}
+
+.explore-arrow {
+  font-size: 2rem;
+}
+
+.explore-02 {
+  color: var(--coral);
+}
+
+.explore-03 {
+  color: var(--mustard);
+}
+
+.explore-04 {
+  color: var(--plum);
+}
 
     /* CONTACT */
 
@@ -271,6 +331,18 @@
       .story-number {
         font-size: 3rem;
       }
+      .explore-link {
+  grid-template-columns: 60px 1fr auto;
+  gap: 16px;
+}
+
+.explore-number {
+  font-size: 2.6rem;
+}
+
+.explore-title {
+  font-size: 2rem;
+}
     }
 
     @media (max-width: 520px) {
@@ -468,9 +540,42 @@
         
       </section>
 
-    </main>
+<!-- EXPLORE MORE WORK -->
+<section class="explore-more">
 
+  <div class="explore-label">
+    Explore more work
+  </div>
 
+  <a
+    class="explore-link"
+    href="research-communications.html"
+  >
+    <span class="explore-number explore-02">02</span>
+    <span class="explore-title">Research Communications</span>
+    <span class="explore-arrow">→</span>
+  </a>
+
+  <a
+    class="explore-link"
+    href="community.html"
+  >
+    <span class="explore-number explore-03">03</span>
+    <span class="explore-title">Community Building</span>
+    <span class="explore-arrow">→</span>
+  </a>
+
+  <a
+    class="explore-link"
+    href="speaking.html"
+  >
+    <span class="explore-number explore-04">04</span>
+    <span class="explore-title">Speaking &amp; Moderating</span>
+    <span class="explore-arrow">→</span>
+  </a>
+
+</section>
+          </main>
     <!-- CONTACT -->
     <section class="contact-section">
 
