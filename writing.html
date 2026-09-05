@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Science writing and editorial work by Kami Navarro, including long-form science features, institutional storytelling and researcher profiles."
+    content="Selected science writing and editorial work by Kami Navarro, including long-form science features, institutional storytelling and profiles."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--cream);
@@ -48,11 +52,18 @@
       text-decoration: none;
     }
 
+    button {
+      font: inherit;
+    }
+
     .page {
       max-width: 1240px;
       margin: 0 auto;
       padding: 0 32px;
     }
+
+
+    /* ---------- HEADER ---------- */
 
     header {
       display: flex;
@@ -78,6 +89,9 @@
       color: var(--green);
     }
 
+
+    /* ---------- TYPOGRAPHY ---------- */
+
     h1,
     h2 {
       margin: 0;
@@ -86,10 +100,10 @@
     }
 
 
-    /* PAGE INTRO */
+    /* ---------- PAGE INTRO ---------- */
 
     .page-intro {
-      padding: 100px 0 110px;
+      padding: 95px 0 65px;
     }
 
     .eyebrow {
@@ -102,157 +116,265 @@
     }
 
     h1 {
-      max-width: 900px;
+      max-width: 1000px;
       font-size: clamp(4.5rem, 8vw, 8rem);
       line-height: 0.9;
       letter-spacing: -0.04em;
     }
 
     .intro {
-      max-width: 700px;
-      margin: 36px 0 0;
+      max-width: 760px;
+      margin: 32px 0 0;
       color: var(--muted);
       font-size: 1.15rem;
       line-height: 1.7;
     }
 
 
-    /* STORIES */
+    /* ---------- CAROUSEL ---------- */
 
-    .story-image {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 28px;
-}
-
-.story-main {
-  max-width: 760px;
-}
-    .stories {
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    .carousel-section {
+      padding: 35px 0 100px;
     }
 
-.story {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 48px;
-  align-items: start;
-  padding: 80px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
+    .carousel-top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
 
-    .story-number {
+    .carousel-count {
+      margin-right: 10px;
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    .carousel-count .current {
       color: var(--coral);
-      font-family: "DM Serif Display", serif;
-      font-size: 4rem;
-      line-height: 0.8;
     }
 
-    .story-type {
-      margin-bottom: 14px;
+    .carousel-button {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      background: transparent;
+      color: var(--ink);
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .carousel-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .carousel-button.next {
+      background: var(--coral);
+      border-color: var(--coral);
+      color: white;
+    }
+
+
+    /* ---------- SLIDES ---------- */
+
+    .carousel-slide {
+      display: none;
+    }
+
+    .carousel-slide.active {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+      animation: fadeIn 0.35s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* ---------- IMAGES ---------- */
+
+    .slide-image-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #f3efe7;
+    }
+
+    .slide-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .slide-image.phone {
+      object-fit: contain;
+    }
+
+
+    /* ---------- SLIDE COPY ---------- */
+
+    .slide-type {
+      margin-bottom: 20px;
       color: var(--green);
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .story h2 {
-      max-width: 700px;
-      font-size: clamp(2.4rem, 4vw, 4.5rem);
-      line-height: 1;
+    .slide-copy h2 {
+      max-width: 560px;
+      font-size: clamp(2.7rem, 4.5vw, 4.8rem);
+      line-height: 0.98;
       letter-spacing: -0.03em;
     }
 
-    .story p {
-      max-width: 650px;
-      margin: 24px 0 0;
+    .slide-copy p {
+      max-width: 540px;
+      margin: 26px 0 30px;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.7;
     }
 
-.read-link {
-  display: inline-block;
-  margin-top: 24px;
-  font-weight: 600;
-}
+    .read-button {
+      display: inline-block;
+      padding: 15px 22px;
+      background: var(--ink);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
 
-.read-link:hover {
-  color: var(--coral);
-}
+    .read-button:hover {
+      transform: translateY(-2px);
+    }
 
-    .read-link:hover {
+
+    /* ---------- CAROUSEL TABS ---------- */
+
+    .carousel-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .carousel-tab {
+      padding: 18px 0 0;
+      border: 0;
+      border-top: 4px solid rgba(0, 0, 0, 0.09);
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .carousel-tab.active {
+      border-top-color: var(--coral);
+      color: var(--ink);
+    }
+
+    .tab-number {
+      margin-right: 10px;
+      color: #aaa;
+      font-family: "DM Serif Display", serif;
+      font-size: 1.6rem;
+    }
+
+    .carousel-tab.active .tab-number {
       color: var(--coral);
     }
 
+    .tab-title {
+      font-size: 0.95rem;
+    }
+
+
     /* ---------- EXPLORE MORE WORK ---------- */
 
-.explore-more {
-  padding: 90px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
+    .explore-more {
+      padding: 90px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
-.explore-label {
-  margin-bottom: 24px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
+    .explore-label {
+      margin-bottom: 24px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-.explore-link {
-  display: grid;
-  grid-template-columns: 95px 1fr auto;
-  gap: 24px;
-  align-items: center;
-  padding: 28px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  transition: padding-left 0.2s ease;
-}
+    .explore-link {
+      display: grid;
+      grid-template-columns: 95px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 28px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      transition: padding-left 0.2s ease;
+    }
 
-.explore-link:last-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
+    .explore-link:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
 
-.explore-link:hover {
-  padding-left: 10px;
-}
+    .explore-link:hover {
+      padding-left: 10px;
+    }
 
-.explore-number {
-  font-family: "DM Serif Display", serif;
-  font-size: 3.5rem;
-  line-height: 1;
-}
+    .explore-number {
+      font-family: "DM Serif Display", serif;
+      font-size: 3.5rem;
+      line-height: 1;
+    }
 
-.explore-title {
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1;
-}
+    .explore-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      line-height: 1;
+    }
 
-.explore-arrow {
-  font-size: 2rem;
-}
+    .explore-arrow {
+      font-size: 2rem;
+    }
 
-.explore-02 {
-  color: var(--coral);
-}
+    .explore-02 {
+      color: var(--coral);
+    }
 
-.explore-03 {
-  color: var(--mustard);
-}
+    .explore-03 {
+      color: var(--mustard);
+    }
 
-.explore-04 {
-  color: var(--plum);
-}
+    .explore-04 {
+      color: var(--plum);
+    }
 
-    /* CONTACT */
+
+    /* ---------- CONTACT ---------- */
 
     .contact-section {
-      margin-top: 100px;
       padding: 7rem 7vw;
       background: var(--plum);
       color: var(--cream);
@@ -305,7 +427,7 @@
     }
 
 
-    /* FOOTER */
+    /* ---------- FOOTER ---------- */
 
     footer {
       display: flex;
@@ -315,34 +437,40 @@
     }
 
 
-    /* MOBILE */
+    /* ---------- RESPONSIVE ---------- */
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
 
       nav {
         display: none;
       }
 
-      .story {
+      .carousel-slide.active {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 34px;
       }
 
-      .story-number {
-        font-size: 3rem;
+      .carousel-top {
+        justify-content: flex-start;
       }
+
+      .carousel-tabs {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
       .explore-link {
-  grid-template-columns: 60px 1fr auto;
-  gap: 16px;
-}
+        grid-template-columns: 60px 1fr auto;
+        gap: 16px;
+      }
 
-.explore-number {
-  font-size: 2.6rem;
-}
+      .explore-number {
+        font-size: 2.6rem;
+      }
 
-.explore-title {
-  font-size: 2rem;
-}
+      .explore-title {
+        font-size: 2rem;
+      }
     }
 
     @media (max-width: 520px) {
@@ -353,6 +481,19 @@
 
       h1 {
         font-size: 4rem;
+      }
+
+      .page-intro {
+        padding-top: 65px;
+      }
+
+      .carousel-button {
+        width: 48px;
+        height: 48px;
+      }
+
+      .slide-copy h2 {
+        font-size: 2.8rem;
       }
 
       footer {
@@ -396,7 +537,8 @@
         </div>
 
         <h1>
-          Where science meets storytelling.
+          Where science meets<br>
+          storytelling.
         </h1>
 
         <p class="intro">
@@ -408,174 +550,242 @@
       </section>
 
 
-      <!-- STORIES -->
-      <section class="stories">
+      <!-- CAROUSEL -->
+      <section class="carousel-section">
 
-<!-- STORY 01 -->
-<article class="story">
+        <div class="carousel-top">
 
-  <div class="story-number">
-    01
-  </div>
+          <div class="carousel-count">
+            <span class="current" id="currentSlide">01</span>
+            &nbsp;/&nbsp; 03
+          </div>
 
-  <div class="story-main">
+          <button
+            class="carousel-button prev"
+            type="button"
+            aria-label="Previous story"
+            id="prevButton"
+          >
+            ←
+          </button>
 
-    <img
-      class="story-image"
-      src="images/all-in-the-genes.jpg"
-      alt="All In The Genes feature in Asian Scientist Magazine"
-    >
+          <button
+            class="carousel-button next"
+            type="button"
+            aria-label="Next story"
+            id="nextButton"
+          >
+            →
+          </button>
 
-    <div class="story-type">
-      Science feature · Asian Scientist Magazine
-    </div>
-
-    <h2>
-      All In The Genes
-    </h2>
-
-    <p>
-      Exploring the promise and pitfalls of consumer genetic testing —
-      and how precision medicine could harness Asia's genetic diversity
-      while protecting individual privacy.
-    </p>
-
-    <a
-      class="read-link"
-      href="https://www.asianscientist.com/2021/09/print/dna-testing-precision-medicine-asia/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Read story →
-    </a>
-
-  </div>
-
-</article>
+        </div>
 
 
-<!-- STORY 02 -->
-<article class="story">
+        <!-- SLIDE 01 · ALAN CHEUNG -->
+        <article class="carousel-slide active">
 
-  <div class="story-number">
-    02
-  </div>
+          <div class="slide-image-wrap">
 
-  <div class="story-main">
+            <img
+              class="slide-image phone"
+              src="images/alan-cheung-phone-mockup.png"
+              alt="Asian Scientist profile of orthopaedic surgeon and ringside doctor Alan Cheung shown on a mobile phone"
+            >
 
-    <img
-      class="story-image"
-      src="images/arp-cover-story.jpg"
-      alt="Three Decades of Driving Dedicated Research feature in A*STAR Research"
-    >
+          </div>
 
-    <div class="story-type">
-      Institutional feature · A*STAR Research
-    </div>
+          <div class="slide-copy">
 
-    <h2>
-      Three Decades of Driving Dedicated Research
-    </h2>
+            <div class="slide-type">
+              Profile · Asian Scientist Magazine
+            </div>
 
-    <p>
-      Tracing three decades of A*STAR's evolution and its role in
-      transforming Singapore into a global research and innovation hub.
-    </p>
+            <h2>
+              Orthopedic Surgeon By Day, Ringside Doctor By Night
+            </h2>
 
-    <a
-      class="read-link"
-      href="https://research.a-star.edu.sg/articles/features/three-decades-of-driving-dedicated-research/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Read story →
-    </a>
+            <p>
+              A profile of surgeon and ringside doctor Alan Cheung, exploring
+              how a lifelong connection to sport shapes his approach to
+              orthopaedics, robotic surgery and patient recovery.
+            </p>
 
-  </div>
+            <a
+              class="read-button"
+              href="https://www.asianscientist.com/2020/09/features/asias-changemakers-alan-cheung/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read story →
+            </a>
 
-</article>
+          </div>
+
+        </article>
 
 
-<!-- STORY 03 -->
-<article class="story">
+        <!-- SLIDE 02 · ALL IN THE GENES -->
+        <article class="carousel-slide">
 
-  <div class="story-number">
-    03
-  </div>
+          <div class="slide-image-wrap">
 
-  <div class="story-main">
+            <img
+              class="slide-image"
+              src="images/all-in-the-genes.jpg"
+              alt="All In The Genes feature in Asian Scientist Magazine"
+            >
 
-    <img
-      class="story-image"
-      src="images/alan-cheung-profile.jpeg"
-      alt="Profile of orthopaedic surgeon and ringside doctor Alan Cheung"
-    >
+          </div>
 
-    <div class="story-type">
-      Profile · Asian Scientist Magazine
-    </div>
+          <div class="slide-copy">
 
-    <h2>
-      Orthopedic Surgeon By Day, Ringside Doctor By Night
-    </h2>
+            <div class="slide-type">
+              Science feature · Asian Scientist Magazine
+            </div>
 
-    <p>
-      A profile of surgeon and ringside doctor Alan Cheung, exploring
-      how a lifelong connection to sport shapes his approach to
-      orthopaedics, robotic surgery and patient recovery.
-    </p>
+            <h2>
+              All In The Genes
+            </h2>
 
-    <a
-      class="read-link"
-      href="https://www.asianscientist.com/2020/09/features/asias-changemakers-alan-cheung/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Read story →
-    </a>
+            <p>
+              Exploring the promise and pitfalls of consumer genetic testing —
+              and how precision medicine could harness Asia's genetic diversity
+              while protecting individual privacy.
+            </p>
 
-  </div>
+            <a
+              class="read-button"
+              href="https://www.asianscientist.com/2021/09/print/dna-testing-precision-medicine-asia/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read story →
+            </a>
 
-</article>
-        
+          </div>
+
+        </article>
+
+
+        <!-- SLIDE 03 · A*STAR -->
+        <article class="carousel-slide">
+
+          <div class="slide-image-wrap">
+
+            <img
+              class="slide-image"
+              src="images/arp-cover-story.jpg"
+              alt="Three Decades of Driving Dedicated Research feature in A*STAR Research"
+            >
+
+          </div>
+
+          <div class="slide-copy">
+
+            <div class="slide-type">
+              Institutional feature · A*STAR Research
+            </div>
+
+            <h2>
+              Three Decades of Driving<br>
+              Dedicated Research
+            </h2>
+
+            <p>
+              Tracing three decades of A*STAR's evolution and its role in
+              transforming Singapore into a global research and innovation hub.
+            </p>
+
+            <a
+              class="read-button"
+              href="https://research.a-star.edu.sg/articles/features/three-decades-of-driving-dedicated-research/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read story →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CAROUSEL TABS -->
+        <div class="carousel-tabs">
+
+          <button
+            class="carousel-tab active"
+            type="button"
+            data-slide="0"
+          >
+            <span class="tab-number">01</span>
+            <span class="tab-title">Alan Cheung</span>
+          </button>
+
+          <button
+            class="carousel-tab"
+            type="button"
+            data-slide="1"
+          >
+            <span class="tab-number">02</span>
+            <span class="tab-title">All In The Genes</span>
+          </button>
+
+          <button
+            class="carousel-tab"
+            type="button"
+            data-slide="2"
+          >
+            <span class="tab-number">03</span>
+            <span class="tab-title">
+              Three Decades of Driving Dedicated Research
+            </span>
+          </button>
+
+        </div>
+
       </section>
 
-<!-- EXPLORE MORE WORK -->
-<section class="explore-more">
 
-  <div class="explore-label">
-    Explore more work
-  </div>
+      <!-- EXPLORE MORE WORK -->
+      <section class="explore-more">
 
-  <a
-    class="explore-link"
-    href="research-communications.html"
-  >
-    <span class="explore-number explore-02">02</span>
-    <span class="explore-title">Research Communications</span>
-    <span class="explore-arrow">→</span>
-  </a>
+        <div class="explore-label">
+          Explore more work
+        </div>
 
-  <a
-    class="explore-link"
-    href="community.html"
-  >
-    <span class="explore-number explore-03">03</span>
-    <span class="explore-title">Community Building</span>
-    <span class="explore-arrow">→</span>
-  </a>
+        <a
+          class="explore-link"
+          href="research-communications.html"
+        >
+          <span class="explore-number explore-02">02</span>
+          <span class="explore-title">Research Communications</span>
+          <span class="explore-arrow">→</span>
+        </a>
 
-  <a
-    class="explore-link"
-    href="speaking.html"
-  >
-    <span class="explore-number explore-04">04</span>
-    <span class="explore-title">Speaking &amp; Moderating</span>
-    <span class="explore-arrow">→</span>
-  </a>
+        <a
+          class="explore-link"
+          href="community.html"
+        >
+          <span class="explore-number explore-03">03</span>
+          <span class="explore-title">Community Building</span>
+          <span class="explore-arrow">→</span>
+        </a>
 
-</section>
-          </main>
+        <a
+          class="explore-link"
+          href="speaking.html"
+        >
+          <span class="explore-number explore-04">04</span>
+          <span class="explore-title">Speaking &amp; Moderating</span>
+          <span class="explore-arrow">→</span>
+        </a>
+
+      </section>
+
+    </main>
+
+
     <!-- CONTACT -->
     <section class="contact-section">
 
@@ -597,14 +807,14 @@
 
         <a
           class="contact-button primary"
-          href="mailto:kamilaianavarro@gmail.com"
+          href="mailto:YOUR-EMAIL-HERE"
         >
           Email me →
         </a>
 
         <a
           class="contact-button secondary"
-          href="https://www.linkedin.com/in/kami-navarro/"
+          href="YOUR-LINKEDIN-URL"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -623,6 +833,75 @@
     </footer>
 
   </div>
+
+
+  <!-- CAROUSEL JAVASCRIPT -->
+  <script>
+
+    const slides = document.querySelectorAll(".carousel-slide");
+    const tabs = document.querySelectorAll(".carousel-tab");
+
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+    const currentSlideDisplay = document.getElementById("currentSlide");
+
+    let currentSlide = 0;
+
+
+    function showSlide(index) {
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      slides[index].classList.add("active");
+      tabs[index].classList.add("active");
+
+      currentSlideDisplay.textContent =
+        String(index + 1).padStart(2, "0");
+
+      currentSlide = index;
+    }
+
+
+    nextButton.addEventListener("click", () => {
+
+      const nextSlide =
+        (currentSlide + 1) % slides.length;
+
+      showSlide(nextSlide);
+
+    });
+
+
+    prevButton.addEventListener("click", () => {
+
+      const previousSlide =
+        (currentSlide - 1 + slides.length) % slides.length;
+
+      showSlide(previousSlide);
+
+    });
+
+
+    tabs.forEach((tab) => {
+
+      tab.addEventListener("click", () => {
+
+        const slideIndex =
+          Number(tab.dataset.slide);
+
+        showSlide(slideIndex);
+
+      });
+
+    });
+
+  </script>
 
 </body>
 
