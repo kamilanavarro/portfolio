@@ -119,18 +119,29 @@
 
     /* STORIES */
 
+    .story-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 28px;
+}
+
+.story-main {
+  max-width: 760px;
+}
     .stories {
       border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .story {
-      display: grid;
-      grid-template-columns: 150px 1fr auto;
-      gap: 48px;
-      align-items: start;
-      padding: 70px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    }
+.story {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 48px;
+  align-items: start;
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 
     .story-number {
       color: var(--coral);
@@ -163,11 +174,15 @@
       line-height: 1.7;
     }
 
-    .read-link {
-      margin-top: 4px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+.read-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+.read-link:hover {
+  color: var(--coral);
+}
 
     .read-link:hover {
       color: var(--coral);
@@ -324,116 +339,133 @@
       <!-- STORIES -->
       <section class="stories">
 
+<!-- STORY 01 -->
+<article class="story">
 
-        <!-- STORY 01 -->
-        <article class="story">
+  <div class="story-number">
+    01
+  </div>
 
-          <div class="story-number">
-            01
-          </div>
+  <div class="story-main">
 
-          <div>
+    <img
+      class="story-image"
+      src="images/all-in-the-genes.jpg"
+      alt="All In The Genes feature in Asian Scientist Magazine"
+    >
 
-            <div class="story-type">
-              Science feature · Asian Scientist Magazine
-            </div>
+    <div class="story-type">
+      Science feature · Asian Scientist Magazine
+    </div>
 
-            <h2>
-              All In The Genes
-            </h2>
+    <h2>
+      All In The Genes
+    </h2>
 
-            <p>
-              Exploring the promise and pitfalls of consumer genetic testing —
-              and how precision medicine could harness Asia's genetic diversity
-              while protecting individual privacy.
-            </p>
+    <p>
+      Exploring the promise and pitfalls of consumer genetic testing —
+      and how precision medicine could harness Asia's genetic diversity
+      while protecting individual privacy.
+    </p>
 
-          </div>
+    <a
+      class="read-link"
+      href="https://www.asianscientist.com/2021/09/print/dna-testing-precision-medicine-asia/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Read story →
+    </a>
 
-          <a
-            class="read-link"
-            href="https://www.asianscientist.com/2021/09/print/dna-testing-precision-medicine-asia/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read story →
-          </a>
+  </div>
 
-        </article>
-
-
-        <!-- STORY 02 -->
-        <article class="story">
-
-          <div class="story-number">
-            02
-          </div>
-
-          <div>
-
-            <div class="story-type">
-              Institutional feature · A*STAR Research
-            </div>
-
-            <h2>
-              Three Decades of Driving Dedicated Research
-            </h2>
-
-            <p>
-              Tracing three decades of A*STAR's evolution and its role in
-              transforming Singapore into a global research and innovation hub.
-            </p>
-
-          </div>
-
-          <a
-            class="read-link"
-            href="https://research.a-star.edu.sg/articles/features/three-decades-of-driving-dedicated-research/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read story →
-          </a>
-
-        </article>
+</article>
 
 
-        <!-- STORY 03 -->
-        <article class="story">
+<!-- STORY 02 -->
+<article class="story">
 
-          <div class="story-number">
-            03
-          </div>
+  <div class="story-number">
+    02
+  </div>
 
-          <div>
+  <div class="story-main">
 
-            <div class="story-type">
-              Profile · Asian Scientist Magazine
-            </div>
+    <img
+      class="story-image"
+      src="images/arp-cover-story.jpg"
+      alt="Three Decades of Driving Dedicated Research feature in A*STAR Research"
+    >
 
-            <h2>
-              Orthopedic Surgeon By Day, Ringside Doctor By Night
-            </h2>
+    <div class="story-type">
+      Institutional feature · A*STAR Research
+    </div>
 
-            <p>
-              A profile of surgeon and ringside doctor Alan Cheung, exploring
-              how a lifelong connection to sport shapes his approach to
-              orthopaedics, robotic surgery and patient recovery.
-            </p>
+    <h2>
+      Three Decades of Driving Dedicated Research
+    </h2>
 
-          </div>
+    <p>
+      Tracing three decades of A*STAR's evolution and its role in
+      transforming Singapore into a global research and innovation hub.
+    </p>
 
-          <a
-            class="read-link"
-            href="https://www.asianscientist.com/2020/09/features/asias-changemakers-alan-cheung/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read story →
-          </a>
+    <a
+      class="read-link"
+      href="https://research.a-star.edu.sg/articles/features/three-decades-of-driving-dedicated-research/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Read story →
+    </a>
 
-        </article>
+  </div>
 
+</article>
+
+
+<!-- STORY 03 -->
+<article class="story">
+
+  <div class="story-number">
+    03
+  </div>
+
+  <div class="story-main">
+
+    <img
+      class="story-image"
+      src="images/alan-cheung-profile.jpeg"
+      alt="Profile of orthopaedic surgeon and ringside doctor Alan Cheung"
+    >
+
+    <div class="story-type">
+      Profile · Asian Scientist Magazine
+    </div>
+
+    <h2>
+      Orthopedic Surgeon By Day, Ringside Doctor By Night
+    </h2>
+
+    <p>
+      A profile of surgeon and ringside doctor Alan Cheung, exploring
+      how a lifelong connection to sport shapes his approach to
+      orthopaedics, robotic surgery and patient recovery.
+    </p>
+
+    <a
+      class="read-link"
+      href="https://www.asianscientist.com/2020/09/features/asias-changemakers-alan-cheung/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Read story →
+    </a>
+
+  </div>
+
+</article>
+        
       </section>
 
     </main>
