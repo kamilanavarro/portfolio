@@ -94,7 +94,7 @@
 
     .eyebrow {
       margin-bottom: 24px;
-      color: var(--mustard);
+      color: var(--green);
       font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -240,6 +240,75 @@
       line-height: 1.75;
     }
 
+  /* SELECTED INITIATIVES */
+
+.initiatives {
+  padding: 90px 0 110px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.initiatives-header {
+  margin-bottom: 36px;
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.initiative-card {
+  min-width: 0;
+}
+
+.initiative-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--cream);
+}
+
+.initiative-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.initiative-type {
+  margin-bottom: 10px;
+  color: var(--green);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.initiative-card h3 {
+  margin: 0 0 14px;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.initiative-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.initiative-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 600;
+}
+
+.initiative-link:hover {
+  color: var(--green);
+}
 
     /* CONTACT */
 
@@ -324,6 +393,11 @@
       .impact-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .initiatives-grid {
+  grid-template-columns: 1fr;
+  gap: 56px;
+}
     }
 
     @media (max-width: 520px) {
@@ -479,39 +553,153 @@
       </section>
 
 
-      <!-- ROLE -->
-      <section class="role">
+     <!-- MY ROLE -->
+<section class="role">
 
-        <div>
+  <div>
+    <div class="feature-label">
+      My role
+    </div>
 
-          <div class="feature-label">
-            My role
-          </div>
+    <h2>
+      Co-founder &amp;
+    </h2>
+  </div>
 
-          <h2>
-            Building connection, not just reach.
-          </h2>
+  <div class="role-copy">
 
-        </div>
+    <p>
+      As co-founder, I’ve helped build
+      Pinoy Scientists from a weekly Facebook takeover into a multi-platform
+      community.
+    </p>
 
-        <div class="role-copy">
+    <p>
+      I coordinate contributors from around the world, lead the team behind the
+      initiative and develop new ways for scientists and audiences to connect —
+      from campaigns and events to new platforms and community resources.
+    </p>
 
-          <p>
-            My work focuses on the communications that keep a community active:
-            shaping stories, creating accessible digital content and finding
-            ways for scientists and audiences to participate rather than simply
-            observe.
-          </p>
+  </div>
 
-          <p>
-            At its core, Pinoy Scientists is about visibility and connection —
-            giving Filipino scientists a platform to share who they are, what
-            they do and the many different paths a life in science can take.
-          </p>
+</section>
 
-        </div>
 
-      </section>
+<!-- SELECTED INITIATIVES -->
+<section class="initiatives">
+
+  <div class="initiatives-header">
+    <div class="feature-label">
+      Selected initiatives
+    </div>
+  </div>
+
+  <div class="initiatives-grid">
+
+    <!-- WEBSITE -->
+    <article class="initiative-card">
+
+      <div class="initiative-image-wrap">
+        <img
+          src="images/pinoyscientists-website.png"
+          alt="Pinoy Scientists website"
+          class="initiative-image"
+        >
+      </div>
+
+      <div class="initiative-type">
+        Digital platform
+      </div>
+
+      <h3>
+        Pinoy Scientists Website
+      </h3>
+
+      <p>
+        A dedicated platform showcasing emerging Filipino scientists from
+        around the world and making their stories easier to discover beyond
+        weekly social media takeovers.
+      </p>
+
+      <a
+        class="initiative-link"
+        href="https://pinoyscientists.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visit website →
+      </a>
+
+    </article>
+
+
+    <!-- PATHWAYS -->
+    <article class="initiative-card">
+
+      <div class="initiative-image-wrap">
+        <img
+          src="images/pathways-to-science.png"
+          alt="P.S. Pathways to Science"
+          class="initiative-image"
+        >
+      </div>
+
+      <div class="initiative-type">
+        Community event
+      </div>
+
+      <h3>
+        P.S. Pathways to Science
+      </h3>
+
+      <p>
+        A career-focused event connecting students and aspiring scientists with
+        Filipino scientists and the different paths they’ve taken through
+        science.
+      </p>
+
+    </article>
+
+
+    <!-- NEWSLETTER -->
+    <article class="initiative-card">
+
+      <div class="initiative-image-wrap">
+        <img
+          src="images/pinoyscientists-newsletter.png"
+          alt="The Pinoy Scientists Newsletter"
+          class="initiative-image"
+        >
+      </div>
+
+      <div class="initiative-type">
+        Community publication
+      </div>
+
+      <h3>
+        The Pinoy Scientists Newsletter
+      </h3>
+
+      <p>
+        A recurring newsletter I launched to bring together scientist stories,
+        research, opportunities and events from across the Filipino science
+        community.
+      </p>
+
+      <a
+        class="initiative-link"
+        href="https://pinoyscientists.substack.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the newsletter →
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
 
     </main>
 
