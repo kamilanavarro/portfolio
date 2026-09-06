@@ -235,7 +235,7 @@
 }
 
 .role-lead {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 28px 0 52px;
   font-family: "DM Serif Display", serif;
   font-size: clamp(2rem, 3vw, 3.15rem);
@@ -247,14 +247,12 @@
 .role-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 12px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .role-item {
-  position: relative;
-  padding: 34px 38px 38px 0;
+  padding: 32px 38px 38px 0;
 }
 
 .role-item + .role-item {
@@ -263,8 +261,8 @@
 }
 
 .role-accent {
-  width: 44px;
-  height: 5px;
+  width: 64px;
+  height: 6px;
   margin-bottom: 24px;
   border-radius: 999px;
 }
@@ -282,27 +280,33 @@
 }
 
 .role-item h3 {
-  margin-bottom: 14px;
+  margin: 0 0 14px;
   font-family: "DM Serif Display", serif;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.55rem, 2vw, 2rem);
   line-height: 1.1;
+  color: var(--ink);
 }
 
 .role-item p {
+  margin: 0;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.7;
 }
 
-.role-organisations {
-  max-width: 1100px;
-  margin-top: 26px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
+
+/* MOBILE */
 
 @media (max-width: 800px) {
+
+  .role {
+    padding: 70px 0 80px;
+  }
+
+  .role-lead {
+    margin-bottom: 36px;
+  }
+
   .role-grid {
     grid-template-columns: 1fr;
   }
@@ -317,9 +321,6 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-  .role-lead {
-    margin-bottom: 36px;
-  }
 }
     
   /* SELECTED INITIATIVES */
@@ -841,7 +842,8 @@
   <p class="role-lead">
     I joined Pinoy Scientists as co-founder in 2018, introducing the
     now-signature weekly takeover format to put Filipino scientists in charge
-    of telling their own stories. What started as a new approach to the platform
+    of telling their own stories. <br>
+    What started as a new approach to the platform
     has since grown into a thriving community of over 84,000 people.
   </p>
 
@@ -849,26 +851,32 @@
 
     <div class="role-item">
       <div class="role-accent coral"></div>
+
       <h3>Weekly takeovers</h3>
+
       <p>
         I coordinate weekly takeovers with Filipino scientists around the world,
-        guide contributors through the process and serve as their first point of
-        contact.
+        guide contributors through the process and serve as their first point
+        of contact.
       </p>
     </div>
 
     <div class="role-item">
       <div class="role-accent green"></div>
-      <h3>Team & community</h3>
+
+      <h3>Team &amp; community</h3>
+
       <p>
-        I lead our communications team, introduced our student internships and
-        have managed interns and campus ambassadors.
+        I lead our communications team, introduced student internships and
+        managed interns and campus ambassadors.
       </p>
     </div>
 
     <div class="role-item">
       <div class="role-accent mustard"></div>
-      <h3>Growth & engagement</h3>
+
+      <h3>Growth &amp; engagement</h3>
+
       <p>
         I help guide how Pinoy Scientists grows and evolves, shaping campaigns,
         events and community programmes, building relationships across the
@@ -878,13 +886,6 @@
     </div>
 
   </div>
-
-  <p class="role-organisations">
-    Along the way, we’ve worked with organisations including the Philippine
-    Department of Science and Technology, Philippine Space Agency,
-    Philippine-American Academy of Science and Engineering, British Council
-    Philippines and GradMAP.
-  </p>
 
 </section>
 
