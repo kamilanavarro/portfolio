@@ -246,11 +246,11 @@
 
 .role-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+    
 .role-item {
   padding: 32px 38px 38px 0;
 }
@@ -278,7 +278,11 @@
 .role-accent.mustard {
   background: var(--mustard);
 }
-
+    
+.role-accent.plum {
+  background: var(--plum);
+}
+    
 .role-item h3 {
   margin: 0 0 14px;
   font-family: "DM Serif Display", serif;
@@ -463,7 +467,6 @@
   line-height: 1.75;
 }
 
-
 /* CAROUSEL CONTROLS */
 
 .initiative-controls {
@@ -548,23 +551,79 @@
 
 }
 
+    /* EXPLORE MORE WORK */
+
+.more-work {
+  padding: 80px 0 100px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.more-work-links {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.more-work-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+  color: var(--ink);
+  text-decoration: none;
+
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.1;
+
+  transition: padding-left 0.25s ease;
+}
+
+.more-work-link:hover {
+  padding-left: 14px;
+}
+
+.more-work-arrow {
+  flex-shrink: 0;
+  margin-left: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  transition: transform 0.25s ease;
+}
+
+.more-work-link:hover .more-work-arrow {
+  transform: translate(4px, -4px);
+}
+
+@media (max-width: 600px) {
+
+  .more-work {
+    padding: 60px 0 70px;
+  }
+
+  .more-work-link {
+    padding: 20px 0;
+  }
+
+}
+
     /* CONTACT */
 
-    .contact-section {
-      margin-top: 80px;
-      padding: 7rem 7vw;
-      background: var(--plum);
-      color: var(--cream);
-    }
+    .contact {
+  width: 100%;
+  background: var(--plum);
+  color: var(--cream);
+  padding: 90px 0;
+}
 
-    .contact-label {
-      margin: 0 0 2rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-    }
+.contact-inner {
+  width: min(1180px, calc(100% - 60px));
+  margin: 0 auto;
+}
 
-    .contact-section h2 {
+    .contact h2 {
       max-width: 700px;
       font-size: clamp(4rem, 8vw, 7rem);
       line-height: 0.9;
@@ -879,11 +938,22 @@
 
       <p>
         I help guide how Pinoy Scientists grows and evolves, shaping campaigns,
-        events and community programmes, building relationships across the
-        Philippine scientific ecosystem, and launching new platforms including
+        events and community programmes, as well as launching new platforms including
         our website and newsletter.
       </p>
     </div>
+
+    <div class="role-item">
+  <div class="role-accent plum"></div>
+
+  <h3>Partnerships</h3>
+
+  <p>
+   I build and nurture relationships across the Philippine scientific ecosystem, 
+   working with organisations including the Philippine Department of Science and Technology, 
+    Philippine Space Agency, Philippine-American Academy of Science and Engineering, British Council Philippines and GradMAP.
+  </p>
+</div>
 
   </div>
 
@@ -1044,10 +1114,38 @@
 
     </main>
 
-    <!-- CONTACT -->
-    <section class="contact-section">
+    <!-- EXPLORE MORE WORK -->
+<section class="more-work">
 
-      <p class="contact-label">
+  <div class="feature-label">
+    Explore more work
+  </div>
+
+  <div class="more-work-links">
+
+    <a href="writing.html" class="more-work-link">
+      <span>Science Writing &amp; Editorial</span>
+      <span class="more-work-arrow">↗</span>
+    </a>
+
+    <a href="research-communications.html" class="more-work-link">
+      <span>Research Communications</span>
+      <span class="more-work-arrow">↗</span>
+    </a>
+
+    <a href="speaking.html" class="more-work-link">
+      <span>Speaking &amp; Moderating</span>
+      <span class="more-work-arrow">↗</span>
+    </a>
+
+  </div>
+
+</section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+
+      <p class="contact-inner">
         GET IN TOUCH
       </p>
 
