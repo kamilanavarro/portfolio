@@ -227,27 +227,101 @@
       line-height: 1.5;
     }
 
-  /* ROLE */
+/* MY ROLE */
+
 .role {
-  padding: 80px 0 100px;
+  padding: 90px 0 100px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.role-copy {
-  max-width: 850px;
-  margin-top: 32px;
+.role-lead {
+  max-width: 1100px;
+  margin: 28px 0 52px;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 3vw, 3.15rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink);
 }
 
-.role-copy p {
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.role-item {
+  position: relative;
+  padding: 34px 38px 38px 0;
+}
+
+.role-item + .role-item {
+  padding-left: 38px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.role-accent {
+  width: 44px;
+  height: 5px;
   margin-bottom: 24px;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.75;
+  border-radius: 999px;
 }
 
-.role-copy p:last-child {
-  margin-bottom: 0;
+.role-accent.coral {
+  background: var(--coral);
 }
+
+.role-accent.green {
+  background: var(--green);
+}
+
+.role-accent.mustard {
+  background: var(--mustard);
+}
+
+.role-item h3 {
+  margin-bottom: 14px;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+
+.role-item p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.role-organisations {
+  max-width: 1100px;
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-item {
+    padding: 28px 0;
+  }
+
+  .role-item + .role-item {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .role-lead {
+    margin-bottom: 36px;
+  }
+}
+    
   /* SELECTED INITIATIVES */
 
 .initiatives {
@@ -757,48 +831,60 @@
 
       </section>
 
-
-    <!-- ROLE -->
+<!-- MY ROLE -->
 <section class="role">
 
-  <div>
-    <div class="feature-label">
-      My role
+  <div class="feature-label">
+    My role
+  </div>
+
+  <p class="role-lead">
+    I joined Pinoy Scientists as co-founder in 2018, introducing the
+    now-signature weekly takeover format to put Filipino scientists in charge
+    of telling their own stories. What started as a new approach to the platform
+    has since grown into a thriving community of over 84,000 people.
+  </p>
+
+  <div class="role-grid">
+
+    <div class="role-item">
+      <div class="role-accent coral"></div>
+      <h3>Weekly takeovers</h3>
+      <p>
+        I coordinate weekly takeovers with Filipino scientists around the world,
+        guide contributors through the process and serve as their first point of
+        contact.
+      </p>
     </div>
-  </div>
 
-  <div class="role-copy">
+    <div class="role-item">
+      <div class="role-accent green"></div>
+      <h3>Team & community</h3>
+      <p>
+        I lead our communications team, introduced our student internships and
+        have managed interns and campus ambassadors.
+      </p>
+    </div>
 
-    <p>
-      I joined Pinoy Scientists as co-founder in 2018, introducing the
-      now-signature weekly takeover format to put Filipino scientists in charge
-      of telling their own stories. What started as a new approach to the
-      platform has since grown into a thriving community of over 84,000 people.
-    </p>
-
-    <p>
-      As Managing Director for Communications, I oversee the platform’s
-      communications strategy, coordinating weekly takeovers with Filipino
-      scientists around the world and serving as the first point of contact for
-      contributors throughout the process. I also lead our communications team,
-      introduced our student internships and have managed interns and campus
-      ambassadors.
-    </p>
-
-    <p>
-      I also help guide how Pinoy Scientists grows and evolves. Over the years,
-      this has meant reimagining how we reach and engage our audience — shaping
-      campaigns, events and community programmes, building relationships with
-      stakeholders across the Philippine scientific ecosystem, and launching
-      new platforms including our website and newsletter. Along the way, 
-      we’ve worked with organisations including the Philippine Department of Science and Technology, 
-      Philippine Space Agency, Philippine-American Academy of Science and Engineering, 
-      British Council Philippines and GradMAP.
-    </p>
-
-    
+    <div class="role-item">
+      <div class="role-accent mustard"></div>
+      <h3>Growth & engagement</h3>
+      <p>
+        I help guide how Pinoy Scientists grows and evolves, shaping campaigns,
+        events and community programmes, building relationships across the
+        Philippine scientific ecosystem, and launching new platforms including
+        our website and newsletter.
+      </p>
+    </div>
 
   </div>
+
+  <p class="role-organisations">
+    Along the way, we’ve worked with organisations including the Philippine
+    Department of Science and Technology, Philippine Space Agency,
+    Philippine-American Academy of Science and Engineering, British Council
+    Philippines and GradMAP.
+  </p>
 
 </section>
 
