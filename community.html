@@ -555,7 +555,7 @@
 
 .more-work {
   padding: 80px 0 100px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 0;
 }
 
 .more-work-links {
@@ -606,6 +606,32 @@
   .more-work-link {
     padding: 20px 0;
   }
+
+  .more-work-title {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.more-work-accent {
+  display: block;
+  width: 52px;
+  height: 5px;
+  flex-shrink: 0;
+  border-radius: 999px;
+}
+
+.more-work-accent.coral {
+  background: var(--coral);
+}
+
+.more-work-accent.mustard {
+  background: var(--mustard);
+}
+
+.more-work-accent.plum {
+  background: var(--plum);
+}
 
 }
 
@@ -1123,73 +1149,84 @@
 
   <div class="more-work-links">
 
-    <a href="writing.html" class="more-work-link">
+  <a href="writing.html" class="more-work-link">
+    <div class="more-work-title">
+      <span class="more-work-accent coral"></span>
       <span>Science Writing &amp; Editorial</span>
-      <span class="more-work-arrow">↗</span>
-    </a>
+    </div>
+    <span class="more-work-arrow">↗</span>
+  </a>
 
-    <a href="research-communications.html" class="more-work-link">
+  <a href="research-communications.html" class="more-work-link">
+    <div class="more-work-title">
+      <span class="more-work-accent mustard"></span>
       <span>Research Communications</span>
-      <span class="more-work-arrow">↗</span>
-    </a>
+    </div>
+    <span class="more-work-arrow">↗</span>
+  </a>
 
-    <a href="speaking.html" class="more-work-link">
+  <a href="speaking.html" class="more-work-link">
+    <div class="more-work-title">
+      <span class="more-work-accent plum"></span>
       <span>Speaking &amp; Moderating</span>
-      <span class="more-work-arrow">↗</span>
-    </a>
+    </div>
+    <span class="more-work-arrow">↗</span>
+  </a>
+
+</div>
+
+</section>
+
+ </div> <!-- closes .page -->
+
+<!-- CONTACT -->
+<section class="contact">
+
+  <div class="contact-inner">
+
+    <p>
+      GET IN TOUCH
+    </p>
+
+    <h2>
+      What are <span class="contact-you">you</span><br>
+      working on?
+    </h2>
+
+    <p class="contact-copy">
+      Whether it’s research that needs translating, a story meant to be
+      shared or a conversation worth having, I’d love to hear from you.
+    </p>
+
+    <div class="contact-links">
+
+      <a
+        class="contact-button primary"
+        href="mailto:kamilaianavarro@gmail.com"
+      >
+        Email me →
+      </a>
+
+      <a
+        class="contact-button secondary"
+        href="https://www.linkedin.com/in/kami-navarro/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn →
+      </a>
+
+    </div>
 
   </div>
 
 </section>
-
-    <!-- CONTACT -->
-    <section class="contact">
-
-      <p class="contact-inner">
-        GET IN TOUCH
-      </p>
-
-      <h2>
-        What are <span class="contact-you">you</span><br>
-        working on?
-      </h2>
-
-      <p class="contact-copy">
-        Whether it’s research that needs translating, a story meant to be
-        shared or a conversation worth having, I’d love to hear from you.
-      </p>
-
-      <div class="contact-links">
-
-        <a
-          class="contact-button primary"
-          href="mailto:kamilaianavarro@gmail.com"
-        >
-          Email me →
-        </a>
-
-        <a
-          class="contact-button secondary"
-          href="https://www.linkedin.com/in/kami-navarro/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn →
-        </a>
-
-      </div>
-
-    </section>
-
 
     <!-- FOOTER -->
     <footer>
       <strong>Kami Navarro</strong>
       <span>Science · People · Communication</span>
     </footer>
-
-  </div>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
