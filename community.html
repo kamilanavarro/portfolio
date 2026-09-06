@@ -575,6 +575,39 @@
       }
     }
 
+    /* COMMUNITY HERO */
+
+.community-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.community-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-hero-image img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .community-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .community-hero-image img {
+    max-width: 420px;
+  }
+}
+
   </style>
 </head>
 
@@ -602,22 +635,32 @@
 
     <main>
 
-   <!-- INTRO -->
-<section class="page-intro">
+<section class="page-intro community-hero">
 
-  <div class="eyebrow">
-    Community Building
+  <div class="community-hero-copy">
+
+    <div class="eyebrow">
+      Community Building
+    </div>
+
+    <h1>
+      Building communities around science.
+    </h1>
+
+    <p class="intro">
+      I create spaces where people can be curious together — sharing what excites
+      them, learning from each other and making connections, all in
+      the name of science.
+    </p>
+
   </div>
 
-  <h1>
-    Building communities around science.
-  </h1>
-
-  <p class="intro">
-    I create spaces where people can be curious together — sharing what excites
-    them, learning from each other and making connections, all in
-    the name of science.
-  </p>
+  <div class="community-hero-image">
+    <img
+      src="images/pinoyscientists-instagram.png"
+      alt="Pinoy Scientists Instagram community"
+    >
+  </div>
 
 </section>
 
