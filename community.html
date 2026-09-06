@@ -320,40 +320,6 @@
   color: var(--green);
 }
 
-      /* ORGANISATIONS */
-
-.organisations {
-  padding: 64px 0 72px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.organisation-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px 36px;
-  margin-top: 28px;
-}
-
-.organisation-list span {
-  font-family: "DM Sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.45;
-  color: var(--ink);
-}
-
-@media (max-width: 800px) {
-  .organisation-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 520px) {
-  .organisation-list {
-    grid-template-columns: 1fr;
-  }
-}
-
     /* SELECTED INITIATIVES */
 
 .initiatives {
@@ -771,30 +737,17 @@
       this has meant reimagining how we reach and engage our audience — shaping
       campaigns, events and community programmes, building relationships with
       stakeholders across the Philippine scientific ecosystem, and launching
-      new platforms including our website and newsletter.
+      new platforms including our website and newsletter. Along the way, 
+      we’ve worked with organisations including the Philippine Department of Science and Technology, 
+      Philippine Space Agency, Philippine-American Academy of Science and Engineering, 
+      British Council Philippines and GradMAP.
     </p>
 
+    
+
   </div>
 
 </section>
-
-      <!-- ORGANISATIONS -->
-<section class="organisations">
-
-  <div class="feature-label">
-    Organisations we’ve worked with
-  </div>
-
-  <div class="organisation-list">
-    <span>Philippine Department of Science and Technology</span>
-    <span>Philippine Space Agency</span>
-    <span>Philippine-American Academy of Science and Engineering</span>
-    <span>British Council Philippines</span>
-    <span>GradMAP</span>
-  </div>
-
-</section>
-
 
 <!-- SELECTED INITIATIVES -->
 <section class="initiatives">
@@ -999,8 +952,66 @@
 
   </div>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     ANIMATED STATS
+  ========================= */
+
+  const stats = document.querySelectorAll(".stat-number");
+
+  const animateStat = (stat) => {
+    const target = parseFloat(stat.dataset.target);
+    const suffix = stat.dataset.suffix || "";
+    const decimals = target % 1 !== 0 ? 1 : 0;
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      /* ease-out */
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+
+      stat.textContent =
+        value.toFixed(decimals).replace(/\.0$/, "") + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        stat.textContent =
+          target.toFixed(decimals).replace(/\.0$/, "") + suffix;
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const statsObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          stats.forEach(animateStat);
+          observer.disconnect();
+        }
+      });
+    },
+    {
+      threshold: 0.3
+    }
+  );
+
+  if (stats.length) {
+    statsObserver.observe(stats[0]);
+  }
+
+
+  /* =========================
+     SELECTED INITIATIVES CAROUSEL
+  ========================= */
 
   const slides = document.querySelectorAll(".initiative-slide");
   const tabs = document.querySelectorAll(".initiative-tab");
@@ -1021,24 +1032,29 @@ document.addEventListener("DOMContentLoaded", function () {
       tab.classList.toggle("active", i === current);
     });
 
-    counter.textContent = String(current + 1).padStart(2, "0");
+    if (counter) {
+      counter.textContent = String(current + 1).padStart(2, "0");
+    }
   }
 
-  prev.addEventListener("click", function () {
-    showSlide(current - 1);
-  });
+  if (slides.length && prev && next) {
 
-  next.addEventListener("click", function () {
-    showSlide(current + 1);
-  });
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", function () {
-      showSlide(index);
+    prev.addEventListener("click", function () {
+      showSlide(current - 1);
     });
-  });
 
-  showSlide(0);
+    next.addEventListener("click", function () {
+      showSlide(current + 1);
+    });
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", function () {
+        showSlide(index);
+      });
+    });
+
+    showSlide(0);
+  }
 
 });
 </script>
