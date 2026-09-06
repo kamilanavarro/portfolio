@@ -248,9 +248,19 @@
 }
 
 .initiatives-header {
-  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
 }
 
+.initiative-controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 0;
+}
+    
 .initiatives-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -310,24 +320,38 @@
   color: var(--green);
 }
 
-        /* ORGANISATIONS */
+      /* ORGANISATIONS */
 
 .organisations {
-  padding: 70px 0 90px;
+  padding: 64px 0 72px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .organisation-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 36px;
   margin-top: 28px;
 }
 
 .organisation-list span {
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(1.4rem, 2vw, 2rem);
-  line-height: 1.25;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+@media (max-width: 800px) {
+  .organisation-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .organisation-list {
+    grid-template-columns: 1fr;
+  }
 }
 
     /* SELECTED INITIATIVES */
@@ -775,11 +799,39 @@
 <!-- SELECTED INITIATIVES -->
 <section class="initiatives">
 
-  <div class="initiatives-header">
-    <div class="feature-label">
-      Selected initiatives
-    </div>
+<div class="initiatives-header">
+
+  <div class="feature-label">
+    Selected initiatives
   </div>
+
+  <div class="initiative-controls">
+
+    <div class="initiative-counter">
+      <span id="initiative-current">01</span> / 03
+    </div>
+
+    <div class="initiative-arrows">
+      <button
+        class="initiative-arrow"
+        id="initiative-prev"
+        aria-label="Previous initiative"
+      >
+        ←
+      </button>
+
+      <button
+        class="initiative-arrow"
+        id="initiative-next"
+        aria-label="Next initiative"
+      >
+        →
+      </button>
+    </div>
+
+  </div>
+
+</div>
 
   <div class="initiative-carousel">
 
@@ -889,24 +941,6 @@
 
   </div>
 
-  <div class="initiative-controls">
-
-  <div class="initiative-counter">
-    <span id="initiative-current">01</span> / 03
-  </div>
-
-  <div class="initiative-arrows">
-    <button class="initiative-arrow" id="initiative-prev" aria-label="Previous initiative">
-      ←
-    </button>
-
-    <button class="initiative-arrow" id="initiative-next" aria-label="Next initiative">
-      →
-    </button>
-  </div>
-
-</div>
-
 <div class="initiative-tabs">
   <button class="initiative-tab active" data-slide="0" aria-label="View Pinoy Scientists Website"></button>
   <button class="initiative-tab" data-slide="1" aria-label="View P.S. Pathways to Science"></button>
@@ -966,50 +1000,47 @@
   </div>
 
   <script>
-  const counters = document.querySelectorAll(".count-up");
+document.addEventListener("DOMContentLoaded", function () {
 
-  const animateCounter = (counter) => {
-    const target = parseFloat(counter.dataset.target);
-    const decimals = parseInt(counter.dataset.decimals || "0");
-    const suffix = counter.dataset.suffix || "";
-    const duration = 1800;
-    const startTime = performance.now();
+  const slides = document.querySelectorAll(".initiative-slide");
+  const tabs = document.querySelectorAll(".initiative-tab");
+  const counter = document.getElementById("initiative-current");
+  const prev = document.getElementById("initiative-prev");
+  const next = document.getElementById("initiative-next");
 
-    const update = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
+  let current = 0;
 
-      // Smooth easing: quick at first, slower toward the end
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = target * eased;
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
 
-      counter.textContent = value.toFixed(decimals) + suffix;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === current);
+    });
 
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        counter.textContent = target.toFixed(decimals) + suffix;
-      }
-    };
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle("active", i === current);
+    });
 
-    requestAnimationFrame(update);
-  };
+    counter.textContent = String(current + 1).padStart(2, "0");
+  }
 
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.5
-    }
-  );
+  prev.addEventListener("click", function () {
+    showSlide(current - 1);
+  });
 
-  counters.forEach((counter) => observer.observe(counter));
+  next.addEventListener("click", function () {
+    showSlide(current + 1);
+  });
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", function () {
+      showSlide(index);
+    });
+  });
+
+  showSlide(0);
+
+});
 </script>
 
 </body>
