@@ -116,6 +116,146 @@
       line-height: 1.7;
     }
 
+    /* WATCH & LISTEN */
+
+.watch-listen {
+  padding: 90px 0 110px;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px 36px;
+  margin-top: 42px;
+}
+
+.media-card {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.media-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.media-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.media-card:hover .media-image img {
+  transform: scale(1.02);
+}
+
+.media-play {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--ink);
+
+  font-size: 0.9rem;
+  padding-left: 3px;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.media-card:hover .media-play {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.media-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.media-accent {
+  width: 38px;
+  height: 5px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.media-accent.coral {
+  background: var(--coral);
+}
+
+.media-accent.green {
+  background: var(--green);
+}
+
+.media-accent.mustard {
+  background: var(--mustard);
+}
+
+.media-accent.plum {
+  background: var(--plum);
+}
+
+.media-type {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media-card h3 {
+  margin: 12px 0 5px;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  line-height: 1.08;
+}
+
+.media-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.media-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+
+  .watch-listen {
+    padding: 70px 0 80px;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .media-play {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
 
     /* EVENTS */
 
@@ -349,6 +489,98 @@
         </p>
 
       </section>
+
+      <!-- WATCH & LISTEN -->
+<section class="watch-listen">
+
+  <div class="feature-label">
+    Watch &amp; listen
+  </div>
+
+  <div class="media-grid">
+
+    <a href="#" class="media-card">
+      <div class="media-image">
+        <img
+          src="images/intl-science-council.png"
+          alt="Kami Navarro appearing on the International Science Council's Unlocking Science podcast"
+        >
+        <span class="media-play">▶</span>
+      </div>
+
+      <div class="media-meta">
+        <span class="media-accent coral"></span>
+        <span class="media-type">Podcast</span>
+      </div>
+
+      <h3>Unlocking Science</h3>
+      <p>International Science Council × BBC StoryWorks</p>
+      <span class="media-link">Listen →</span>
+    </a>
+
+
+    <a href="#" class="media-card">
+      <div class="media-image">
+        <img
+          src="images/pathways-to-science.png"
+          alt="Kami Navarro moderating the P.S. Pathways to Science panel"
+        >
+        <span class="media-play">▶</span>
+      </div>
+
+      <div class="media-meta">
+        <span class="media-accent green"></span>
+        <span class="media-type">Moderating</span>
+      </div>
+
+      <h3>P.S. Pathways to Science</h3>
+      <p>Pinoy Scientists</p>
+      <span class="media-link">Watch →</span>
+    </a>
+
+
+    <a href="#" class="media-card">
+      <div class="media-image">
+        <img
+          src="images/paase.png"
+          alt="Kami Navarro speaking at a PAASE fireside chat"
+        >
+        <span class="media-play">▶</span>
+      </div>
+
+      <div class="media-meta">
+        <span class="media-accent mustard"></span>
+        <span class="media-type">Speaking</span>
+      </div>
+
+      <h3>PAASE Fireside Chat</h3>
+      <p>PAASE × Pinoy Scientists</p>
+      <span class="media-link">Watch →</span>
+    </a>
+
+
+    <a href="#" class="media-card">
+      <div class="media-image">
+        <img
+          src="images/gma-news.png"
+          alt="Kami Navarro in a GMA News and Public Affairs Digital feature"
+        >
+        <span class="media-play">▶</span>
+      </div>
+
+      <div class="media-meta">
+        <span class="media-accent plum"></span>
+        <span class="media-type">On camera</span>
+      </div>
+
+      <h3>GMA News Digital</h3>
+      <p>Talking-head feature</p>
+      <span class="media-link">Watch →</span>
+    </a>
+
+  </div>
+
+</section>
 
 
       <!-- EVENTS -->
