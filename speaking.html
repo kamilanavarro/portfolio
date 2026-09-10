@@ -153,6 +153,12 @@
   display: block;
   transition: transform 0.35s ease;
 }
+    .media-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .media-card:hover .media-image img {
   transform: scale(1.02);
@@ -509,13 +515,15 @@
   href="images/unlocking-science.mp4"
   class="media-card"
 >
-      <div class="media-image">
-        <img
-          src="images/intl-science-council.png"
-          alt="Kami Navarro appearing on the International Science Council's Unlocking Science podcast"
-        >
-        <span class="media-play">▶</span>
-      </div>
+<div class="media-image">
+  <video
+    controls
+    poster="images/intl-science-council.png"
+    preload="metadata"
+  >
+    <source src="images/unlocking-science.mp4" type="video/mp4">
+  </video>
+</div>
 
       <div class="media-meta">
         <span class="media-accent coral"></span>
