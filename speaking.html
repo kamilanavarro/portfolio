@@ -281,6 +281,28 @@
   color: var(--ink);
 }
 
+    .speaking-media-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.speaking-media-title::-webkit-details-marker {
+  display: none;
+}
+
+.speaking-media-toggle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.speaking-media-accordion[open] .speaking-media-toggle {
+  transform: rotate(45deg);
+}
+
     /* EVENTS */
 
     .events {
@@ -632,25 +654,16 @@
       <!-- SPEAKING & MEDIA -->
 <section class="speaking-media">
 
-  <h2 class="speaking-media-title">Speaking &amp; Media</h2>
+  <details class="speaking-media-accordion">
+    <summary class="speaking-media-title">
+      <span>Speaking &amp; Media</span>
+      <span class="speaking-media-toggle">+</span>
+    </summary>
 
-  <div class="appearance-list">
-
-  <div class="appearance-item">
-    <div class="appearance-year">Year</div>
-
-    <div class="appearance-details">
-      <span class="appearance-type">Speaking</span>
-      <h3>Berlin Science Debate</h3>
-      <p>Berlin Science Week</p>
+    <div class="speaking-media-content">
+      <!-- appearances will go here -->
     </div>
-
-    <div class="appearance-link">
-      <span>Read more →</span>
-    </div>
-  </div>
-
-</div>
+  </details>
 
 </section>
 
